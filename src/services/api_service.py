@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 class APIService:
     """Service de communication avec l'API backend"""
     
-    def __init__(self, base_url: str = "https://backend-medigest.onrender.com"):
+    def __init__(self, base_url: str = "https://my-backend-ydit.onrender.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api/v1"
         self.timeout = 30

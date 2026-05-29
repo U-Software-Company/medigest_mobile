@@ -770,7 +770,7 @@ class AuthService:
         for endpoint in endpoints:
             try:
                 response = requests.get(
-                    f"https://backend-medigest.onrender.com{endpoint}",
+                    f"https://my-backend-ydit.onrender.com{endpoint}",
                     headers={
                         "Authorization": f"Bearer {token}",
                         "Content-Type": "application/json"

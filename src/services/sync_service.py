@@ -57,7 +57,7 @@ class SyncService:
         self.db = db
         self.auth_service = auth_service
         self.connection_manager = ConnectionManager() 
-        self.base_url = "https://backend-medigest.onrender.com"
+        self.base_url = "https://my-backend-ydit.onrender.com"
         self.api_url = f"{self.base_url}/api/v1"
         
         # ✅ Désactiver les avertissements SSL

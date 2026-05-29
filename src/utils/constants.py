@@ -3,7 +3,7 @@ Constantes globales pour l'application mobile
 """
 
 # URLs
-BASE_URL = "https://backend-medigest.onrender.com"
+BASE_URL = "https://my-backend-ydit.onrender.com"
 API_URL = f"{BASE_URL}/api/v1"
 FRONTEND_URL = "https://medigestpro.net"
 

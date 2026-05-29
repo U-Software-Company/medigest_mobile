@@ -51,7 +51,7 @@ class PrintManager:
         
         try:
             # Récupérer l'URL de l'API
-            api_url = "https://backend-medigest.onrender.com/api/v1"
+            api_url = "https://my-backend-ydit.onrender.com/api/v1"
             
             # Récupérer le token depuis l'utilisateur courant
             token = self.current_user.get('token')
@@ -109,7 +109,7 @@ class PrintManager:
         import requests
         
         try:
-            api_url = "https://backend-medigest.onrender.com/api/v1"
+            api_url = "https://my-backend-ydit.onrender.com/api/v1"
             token = self.current_user.get('token')
             
             if not token:

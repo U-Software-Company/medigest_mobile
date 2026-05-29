@@ -68,7 +68,7 @@ class DashboardDetailsScreen:
         """Récupère l'URL de base de l'API"""
         if self.sync_service and hasattr(self.sync_service, 'api_url'):
             return self.sync_service.api_url
-        return "https://backend-medigest.onrender.com/api/v1"
+        return "https://my-backend-ydit.onrender.com/api/v1"
     
     def _safe_number(self, value, default=0.0) -> float:
         """Convertit une valeur en nombre de manière sécurisée"""
