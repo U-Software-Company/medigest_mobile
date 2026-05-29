@@ -1,0 +1,40 @@
+[project]
+name = "mobile-online"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Kionga Timothée Splane ", email = "kiongasplane64@gmail.com" }
+]
+dependencies = [
+    "flet>=0.85.1",
+    "requests>=2.31.0",
+    "python-dateutil>=2.8.2"
+]
+
+[dependency-groups]
+dev = [
+    "flet-cli>=0.85.1",
+    "flet-desktop>=0.85.1",
+    "flet-web>=0.85.1",
+]
+
+[tool.flet]
+org = "medigestpro.net"
+product = "MediGestPro"
+company = "U SOFTWARE COMPANY"
+copyright = "Copyright (C) 2023-2026 U SOFTWARE COMPANY"
+assets_dir = "assets"
+
+[tool.flet.app]
+path = "src"
+
+[tool.flet.flutter]
+icon = "assets/icon.png"
+splash_android = "assets/splash_android.png"
+
+[tool.flet.android.permission]
+"android.permission.INTERNET" = true
+"android.permission.READ_EXTERNAL_STORAGE" = true
+"android.permission.WRITE_EXTERNAL_STORAGE" = true
