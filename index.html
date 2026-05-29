@@ -2,89 +2,414 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediGest Mobile</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MediGestPro - Gestion de pharmacie à distance</title>
     <style>
-        body{
-            background:#0f172a;
-            color:white;
-            font-family:Arial;
-            margin:0;
-            padding:0;
-            text-align:center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .container{
-            padding:40px;
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
         }
 
-        h1{
-            font-size:50px;
-            margin-top:30px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 30px 40px;
         }
 
-        p{
-            font-size:20px;
-            color:#cbd5e1;
+        /* Logo et en-tête */
+        .logo-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        .download-btn{
-            display:inline-block;
-            margin-top:30px;
-            padding:15px 35px;
-            background:#2563eb;
-            color:white;
-            text-decoration:none;
-            border-radius:10px;
-            font-size:20px;
+        .pharma-logo {
+            background: linear-gradient(135deg, #10b981, #059669);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
-        .download-btn:hover{
-            background:#1d4ed8;
+        .pharma-logo span {
+            font-size: 55px;
+            font-weight: bold;
+            color: white;
         }
 
-        .card{
-            background:#1e293b;
-            margin:30px auto;
-            padding:20px;
-            border-radius:15px;
-            max-width:700px;
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0 10px;
+            background: linear-gradient(135deg, #fff, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        img{
-            width:250px;
-            border-radius:15px;
-            margin-top:20px;
+        .subtitle {
+            font-size: 1.3rem;
+            color: #10b981;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .catch-phrase {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Boutons */
+        .buttons-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-android {
+            background: #3ddc84;
+            color: #1a1a1a;
+        }
+
+        .btn-android:hover {
+            background: #34c277;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(61,220,132,0.3);
+        }
+
+        .btn-windows {
+            background: #0078d4;
+            color: white;
+        }
+
+        .btn-windows:hover {
+            background: #106ebe;
+            transform: translateY(-3px);
+        }
+
+        .btn-web {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .btn-web:hover {
+            background: #7c3aed;
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20b859;
+            transform: translateY(-3px);
+        }
+
+        .btn-email {
+            background: #ea4335;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-email:hover {
+            background: #d33426;
+            transform: translateY(-3px);
+        }
+
+        /* Cartes fonctionnalités */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .feature-card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #334155;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+            border-color: #10b981;
+        }
+
+        .feature-card h3 {
+            color: #10b981;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-card li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: #cbd5e1;
+        }
+
+        .feature-card li:before {
+            content: "✔";
+            color: #10b981;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Section hors ligne */
+        .offline-badge {
+            background: #0f172a;
+            border: 2px dashed #10b981;
+            border-radius: 50px;
+            padding: 12px 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .offline-badge span:first-child {
+            font-size: 28px;
+        }
+
+        /* Contacts */
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0 30px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        .founder {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .catch-phrase {
+                font-size: 1.4rem;
+            }
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
-
 <body>
 
 <div class="container">
-
-    <h1>MediGest Mobile</h1>
-
-    <p>
-        Application moderne de gestion médicale.
-    </p>
-
-    <a class="download-btn"
-       href="https://github.com/U-Software-Company/medigest_mobile/releases/download/v1.0.0/mobile-online.apk">
-       Télécharger APK
-    </a>
-
-    <div class="card">
-        <h2>Fonctionnalités</h2>
-
-        <p>✔ Gestion patients</p>
-        <p>✔ Tableau de bord</p>
-        <p>✔ Synchronisation API</p>
-        <p>✔ Authentification sécurisée</p>
+    <!-- Logo pharmacie (+) -->
+    <div class="logo-header">
+        <div class="pharma-logo">
+            <span>+</span>
+        </div>
     </div>
 
+    <!-- Titre principal modifié -->
+    <h1>MediGest<span style="color:#10b981;">Pro</span></h1>
+    <div class="subtitle">Gestion pharmaceutique intelligente</div>
+
+    <!-- Titre attirant -->
+    <div class="catch-phrase">
+        📱 Gérez votre pharmacie à distance
+    </div>
+
+    <p class="description">
+        Solution complète pour piloter votre officine où que vous soyez. 
+        Avec ou sans internet, bénéficiez d'une synchronisation fiable et d'outils professionnels.
+    </p>
+
+    <!-- Badge fonctionnement hors ligne + sync -->
+    <div class="offline-badge">
+        <span>📶</span>
+        <span><strong>✓ Fonctionne sans internet</strong> | Synchronisation automatique</span>
+        <span>🔄</span>
+    </div>
+
+    <!-- Boutons de téléchargement et web -->
+    <div class="buttons-section">
+        <a href="#" class="btn btn-android" id="androidBtn">📲 Télécharger APK pour Android</a>
+        <a href="#" class="btn btn-windows" id="windowsBtn">💻 Télécharger pour Windows</a>
+        <a href="https://www.medigestpro.net" target="_blank" class="btn btn-web" id="webBtn">🌐 Utiliser le web (www.medigestpro.net)</a>
+    </div>
+
+    <!-- Fonctionnalités complètes -->
+    <h2 style="text-align:center; margin: 30px 0 20px;">✨ Fonctionnalités avancées</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>🏪 Gestion globale</h3>
+            <ul>
+                <li>Gestion complète de la pharmacie</li>
+                <li>Ventes et facturation automatique</li>
+                <li>Calcul automatique de bénéfice</li>
+                <li>Chiffre d'affaire & Capital</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h3>📦 Stock intelligent</h3>
+            <ul>
+                <li>Gestion de stock précise</li>
+                <li>Alertes rupture de stock</li>
+                <li>Alertes péremption</li>
+                <li>Inventaire et transfert</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h3>💰 Finances & Clients</h3>
+            <ul>
+                <li>Gestion des dettes clients</li>
+                <li>Gestion des dépenses</li>
+                <li>Tableaux de bord financiers</li>
+                <li>Statistiques en temps réel</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ligne supplémentaire : synchronisation hors ligne -->
+    <div style="text-align:center; background:#0f172a; padding:15px; border-radius:40px; margin:20px 0;">
+        <span style="background:#10b98120; padding:8px 20px; border-radius:40px;">
+            🔄 Synchronisation cloud automatique | Mode hors ligne actif
+        </span>
+    </div>
+
+    <!-- Contact: WhatsApp direct + Email -->
+    <div class="contact-bar">
+        <a href="https://wa.me/243820586551" target="_blank" class="btn btn-whatsapp" id="whatsappLink">
+            💬 Nous écrire sur WhatsApp
+        </a>
+        <a href="mailto:u12software@gmail.com" class="btn btn-email" id="emailLink">
+            ✉️ u12software@gmail.com
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Copyright <span id="currentYear"></span> Power by U software Company.</p>
+        <p>Fondateur : <span class="founder">Kionga Timothée Splane</span></p>
+        <p style="font-size:0.8rem; margin-top:12px;">MediGestPro - Solution fiable pour pharmaciens modernes</p>
+    </footer>
 </div>
 
+<script>
+    // Année dynamique pour copyright
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+    // Redirection pour les boutons de téléchargement (liens fictifs, à remplacer par vrais liens si besoin)
+    // Pour garder l'apparence fonctionnelle, on affiche une alerte ou on ouvre des liens.
+    // Vous pouvez remplacer les href par les vrais liens de téléchargement.
+    const androidBtn = document.getElementById('androidBtn');
+    const windowsBtn = document.getElementById('windowsBtn');
+    const webBtn = document.getElementById('webBtn');
+    
+    // Activer les liens réels (à personnaliser avec vos fichiers APK/EXE)
+    androidBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Simule téléchargement APK - À remplacer par votre vrai lien APK
+        window.location.href = 'https://github.com/U-Software-Company/medigestpro/releases/download/v1.0/medigestpro-android.apk';
+        // Si vous n'avez pas encore le lien, affichez un message:
+        // alert("Lien de téléchargement APK disponible prochainement. Contactez support.");
+    });
+    
+    windowsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Lien pour Windows (exe ou installer)
+        window.location.href = 'https://github.com/U-Software-Company/medigestpro/releases/download/v1.0/MediGestPro-Setup.exe';
+        // alert("Version Windows bientôt disponible.");
+    });
+    
+    // Le bouton web est déjà un lien normal, mais on peut laisser ainsi.
+    // On s'assure que le lien whatasapp ouvre l'app directement:
+    const whatsappLink = document.getElementById('whatsappLink');
+    // déjà un href valide https://wa.me/243820586551 → ouvre WhatsApp direct
+    
+    // Pour l'email: mailto déjà correct
+</script>
+
+<!-- Note: Le logo pharmacie (+) est visible en haut, 
+     Tous les textes sont modifiés, 
+     liens WhatsApp direct, email, 
+     fonctionnalités détaillées comme demandé.
+     La page est responsive et moderne. 
+     Les boutons Android/Windows renvoient vers des exemples d'URLs. 
+     Remplacez les URLs de téléchargement par vos véritables liens si besoin.
+-->
 </body>
 </html>
