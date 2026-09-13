@@ -127,6 +127,18 @@
             transform: translateY(-3px);
         }
 
+        /* NOUVEAU BOUTON POS */
+        .btn-pos {
+            background: #f59e0b;
+            color: #1a1a1a;
+        }
+
+        .btn-pos:hover {
+            background: #d97706;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(245,158,11,0.3);
+        }
+
         .btn-web {
             background: #8b5cf6;
             color: white;
@@ -308,6 +320,7 @@
     <div class="buttons-section">
         <a href="#" class="btn btn-android" id="androidBtn">📲 Télécharger APK pour Android</a>
         <a href="#" class="btn btn-windows" id="windowsBtn">💻 Télécharger pour Windows</a>
+        <a href="#" class="btn btn-pos" id="posBtn">🖥️ Télécharger pour POS</a>
         <a href="https://www.medigestpro.net" target="_blank" class="btn btn-web" id="webBtn">🌐 Utiliser le web (www.medigestpro.net)</a>
     </div>
 
@@ -372,44 +385,34 @@
     // Année dynamique pour copyright
     document.getElementById('currentYear').innerText = new Date().getFullYear();
 
-    // Redirection pour les boutons de téléchargement (liens fictifs, à remplacer par vrais liens si besoin)
-    // Pour garder l'apparence fonctionnelle, on affiche une alerte ou on ouvre des liens.
-    // Vous pouvez remplacer les href par les vrais liens de téléchargement.
+    // Redirection pour les boutons de téléchargement
     const androidBtn = document.getElementById('androidBtn');
     const windowsBtn = document.getElementById('windowsBtn');
+    const posBtn = document.getElementById('posBtn');
     const webBtn = document.getElementById('webBtn');
     
-    // Activer les liens réels (à personnaliser avec vos fichiers APK/EXE)
+    // Bouton Android - lien APK
     androidBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        // Simule téléchargement APK - À remplacer par votre vrai lien APK
         window.location.href = 'https://github.com/U-Software-Company/medigest_mobile/releases/download/v1.0.0/app-release.apk';
-        // Si vous n'avez pas encore le lien, affichez un message:
-        // alert("Lien de téléchargement APK disponible prochainement. Contactez support.");
     });
     
+    // Bouton Windows
     windowsBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        // Lien pour Windows (exe ou installer)
         window.location.href = 'https://github.com/U-Software-Company/medigestpro/releases/download/v1.0/MediGestPro-Setup.exe';
-        // alert("Version Windows bientôt disponible.");
     });
     
-    // Le bouton web est déjà un lien normal, mais on peut laisser ainsi.
-    // On s'assure que le lien whatasapp ouvre l'app directement:
+    // NOUVEAU : Bouton POS - lien APK
+    posBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'https://github.com/U-Software-Company/medigest_mobile/releases/download/v1.0.0/app-release.apk';
+    });
+    
+    // Le bouton web est déjà un lien normal
     const whatsappLink = document.getElementById('whatsappLink');
     // déjà un href valide https://wa.me/243820586551 → ouvre WhatsApp direct
-    
-    // Pour l'email: mailto déjà correct
 </script>
 
-<!-- Note: Le logo pharmacie (+) est visible en haut, 
-     Tous les textes sont modifiés, 
-     liens WhatsApp direct, email, 
-     fonctionnalités détaillées comme demandé.
-     La page est responsive et moderne. 
-     Les boutons Android/Windows renvoient vers des exemples d'URLs. 
-     Remplacez les URLs de téléchargement par vos véritables liens si besoin.
--->
 </body>
 </html>
