@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Acheter MediGestPro - Tarifs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #1e293b;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 1px solid #334155;
+        }
+
+        .price-table thead {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .price-table th {
+            padding: 20px;
+            text-align: left;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0f172a;
+        }
+
+        .price-table td {
+            padding: 20px;
+            border-bottom: 1px solid #334155;
+            vertical-align: middle;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-table tr:hover td {
+            background: #263449;
+        }
+
+        .device-cell {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .device-cell svg {
+            width: 32px;
+            height: 32px;
+            fill: #10b981;
+            flex-shrink: 0;
+        }
+
+        .price-cell {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+            white-space: nowrap;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #10b98120;
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .btn-buy {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #f43f5e, #e11d48);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-buy:hover {
+            background: linear-gradient(135deg, #e11d48, #be123c);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(244, 63, 94, 0.4);
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #334155;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .btn-back:hover {
+            background: #475569;
+            transform: translateY(-2px);
+        }
+
+        .note {
+            text-align: center;
+            margin-top: 30px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .note strong {
+            color: #10b981;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .price-table th, .price-table td { padding: 14px; }
+            .device-cell { font-size: 0.95rem; }
+            .device-cell svg { width: 26px; height: 26px; }
+            .price-cell { font-size: 1.2rem; }
+            .btn-buy { padding: 10px 18px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>💊 Acheter MediGestPro</h1>
+    <p class="subtitle">Choisissez la version adaptée à votre pharmacie</p>
+
+    <table class="price-table">
+        <thead>
+            <tr>
+                <th>Plateforme</th>
+                <th>Prix</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="device-cell">
+                        <!-- Icône Mobile / Android (dessin SVG) -->
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                            <circle cx="12" cy="17" r="1"/>
+                        </svg>
+                        POUR MOBILE
+                        <span class="badge">Android / POS</span>
+                    </div>
+                </td>
+                <td class="price-cell">150 $</td>
+                <td>
+                    <a href="https://wa.me/243820586551?text=Je%20souhaite%20acheter%20MediGestPro%20pour%20Mobile%20(150%24)" target="_blank" class="btn-buy">
+                        Acheter
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="device-cell">
+                        <!-- Icône Windows (dessin SVG) -->
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 5.5L10.5 4.3v7.2H3V5.5zm0 13L10.5 19.7v-7.2H3v6zm9.5 1.3L21 21V12.5h-8.5v7.3zm0-15.6v7.2H21V3l-8.5 1.2z"/>
+                        </svg>
+                        POUR WINDOWS
+                        <span class="badge">PC / Laptop</span>
+                    </div>
+                </td>
+                <td class="price-cell">150 $</td>
+                <td>
+                    <a href="https://wa.me/243820586551?text=Je%20souhaite%20acheter%20MediGestPro%20pour%20Windows%20(150%24)" target="_blank" class="btn-buy">
+                        Acheter
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="note">
+        💳 Paiement sécurisé via <strong>Mobile Money</strong>, <strong>Virement bancaire</strong> ou <strong>Espèces</strong>.<br>
+        📞 Contactez-nous sur WhatsApp après votre commande pour recevoir votre licence.<br>
+        🔑 Une licence valable à vie pour une installation.
+    </p>
+
+    <div style="text-align:center;">
+        <a href="index.html" class="btn-back">
+            ← Retour à l'accueil
+        </a>
+    </div>
+
+    <footer>
+        <p>© Copyright <span id="currentYear"></span> Power by U software Company.</p>
+        <p>Fondateur : <span style="color:#10b981; font-weight:bold;">Kionga Timothée Splane</span></p>
+    </footer>
+</div>
+
+<script>
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+</script>
+
+</body>
+</html>
