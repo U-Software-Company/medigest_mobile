@@ -58,6 +58,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            text-align: center;
         }
 
         .subtitle {
@@ -65,6 +66,7 @@
             color: #10b981;
             font-weight: bold;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .catch-phrase {
@@ -75,6 +77,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            text-align: center;
         }
 
         .description {
@@ -82,6 +85,7 @@
             color: #cbd5e1;
             max-width: 800px;
             margin: 0 auto 30px;
+            text-align: center;
         }
 
         /* Boutons */
@@ -94,7 +98,9 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             padding: 14px 28px;
             font-size: 1rem;
             font-weight: bold;
@@ -104,6 +110,13 @@
             cursor: pointer;
             border: none;
             text-align: center;
+        }
+
+        .btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+            flex-shrink: 0;
         }
 
         .btn-android {
@@ -127,7 +140,6 @@
             transform: translateY(-3px);
         }
 
-        /* NOUVEAU BOUTON POS */
         .btn-pos {
             background: #f59e0b;
             color: #1a1a1a;
@@ -149,12 +161,30 @@
             transform: translateY(-3px);
         }
 
+        .btn-buy {
+            background: linear-gradient(135deg, #f43f5e, #e11d48);
+            color: white;
+            font-size: 1.15rem;
+            padding: 16px 36px;
+            box-shadow: 0 8px 20px rgba(244, 63, 94, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .btn-buy:hover {
+            background: linear-gradient(135deg, #e11d48, #be123c);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 14px 30px rgba(244, 63, 94, 0.6);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 20px rgba(244, 63, 94, 0.4); }
+            50% { box-shadow: 0 8px 30px rgba(244, 63, 94, 0.7); }
+            100% { box-shadow: 0 8px 20px rgba(244, 63, 94, 0.4); }
+        }
+
         .btn-whatsapp {
             background: #25d366;
             color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .btn-whatsapp:hover {
@@ -165,9 +195,6 @@
         .btn-email {
             background: #ea4335;
             color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .btn-email:hover {
@@ -282,6 +309,10 @@
                 padding: 12px 20px;
                 font-size: 0.9rem;
             }
+            .btn-buy {
+                font-size: 1rem;
+                padding: 14px 28px;
+            }
         }
     </style>
 </head>
@@ -295,7 +326,7 @@
         </div>
     </div>
 
-    <!-- Titre principal modifié -->
+    <!-- Titre principal -->
     <h1>MediGest<span style="color:#10b981;">Pro</span></h1>
     <div class="subtitle">Gestion pharmaceutique intelligente</div>
 
@@ -305,23 +336,63 @@
     </div>
 
     <p class="description">
-        Solution complète pour piloter votre officine où que vous soyez. 
+        Solution complète pour piloter votre officine où que vous soyez.
         Avec ou sans internet, bénéficiez d'une synchronisation fiable et d'outils professionnels.
     </p>
 
     <!-- Badge fonctionnement hors ligne + sync -->
-    <div class="offline-badge">
-        <span>📶</span>
-        <span><strong>✓ Fonctionne sans internet</strong> | Synchronisation automatique</span>
-        <span>🔄</span>
+    <div style="text-align:center;">
+        <div class="offline-badge">
+            <span>📶</span>
+            <span><strong>✓ Fonctionne sans internet</strong> | Synchronisation automatique</span>
+            <span>🔄</span>
+        </div>
     </div>
 
     <!-- Boutons de téléchargement et web -->
     <div class="buttons-section">
-        <a href="#" class="btn btn-android" id="androidBtn">📲 Télécharger APK pour Android</a>
-        <a href="#" class="btn btn-windows" id="windowsBtn">💻 Télécharger pour Windows</a>
-        <a href="#" class="btn btn-pos" id="posBtn">🖥️ Télécharger pour POS</a>
-        <a href="https://www.medigestpro.net" target="_blank" class="btn btn-web" id="webBtn">🌐 Utiliser le web (www.medigestpro.net)</a>
+        <a href="#" class="btn btn-android" id="androidBtn">
+            <!-- Icône Android (dessin SVG) -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.14-.52.38.38 0 0 0-.52.14l-1.87 3.23A11.4 11.4 0 0 0 12 8.4c-1.82 0-3.53.44-5.05 1.22L5.08 6.4a.38.38 0 0 0-.52-.14.38.38 0 0 0-.14.52l1.84 3.18C3.74 11.6 2.2 14.15 2.2 17h19.6c0-2.85-1.54-5.4-4.2-7.52zM7 14.25a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zm10 0a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"/>
+            </svg>
+            Télécharger APK pour Android
+        </a>
+
+        <a href="#" class="btn btn-windows" id="windowsBtn">
+            <!-- Icône Windows (dessin SVG) -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 5.5L10.5 4.3v7.2H3V5.5zm0 13L10.5 19.7v-7.2H3v6zm9.5 1.3L21 21V12.5h-8.5v7.3zm0-15.6v7.2H21V3l-8.5 1.2z"/>
+            </svg>
+            Télécharger pour Windows
+        </a>
+
+        <a href="#" class="btn btn-pos" id="posBtn">
+            <!-- Icône POS / Écran tactile (dessin SVG) -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h7v2H8v2h8v-2h-3v-2h7a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 11H4V6h16v9z"/>
+                <circle cx="12" cy="10.5" r="1.2"/>
+            </svg>
+            Télécharger pour POS
+        </a>
+
+        <a href="https://www.medigestpro.net" target="_blank" class="btn btn-web" id="webBtn">
+            <!-- Icône Globe (dessin SVG) -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.93 9h-3.02a15.6 15.6 0 0 0-1.1-5.36A8.02 8.02 0 0 1 19.93 11zM12 4.04c.83 1.2 1.7 3.2 2.1 6.96H9.9c.4-3.76 1.27-5.76 2.1-6.96zM9.9 13h4.2c-.4 3.76-1.27 5.76-2.1 6.96-.83-1.2-1.7-3.2-2.1-6.96zM7.19 5.64A15.6 15.6 0 0 0 6.09 11H3.07a8.02 8.02 0 0 1 4.12-5.36zM3.07 13h3.02c.2 1.98.66 3.8 1.1 5.36A8.02 8.02 0 0 1 3.07 13zm13.74 5.36c.44-1.56.9-3.38 1.1-5.36h3.02a8.02 8.02 0 0 1-4.12 5.36z"/>
+            </svg>
+            Utiliser le web
+        </a>
+    </div>
+
+    <!-- Bouton Acheter -->
+    <div style="text-align:center; margin: 10px 0 30px;">
+        <a href="acheter.html" class="btn btn-buy" id="buyBtn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14.26l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20 3H6.21l-.94-2H1v2h3l3.6 7.59-1.35 2.44C5.52 14.37 6.29 16 7.16 16H19v-2H7.42l-.26-.74z"/>
+            </svg>
+            Acheter maintenant — 150 $
+        </a>
     </div>
 
     <!-- Fonctionnalités complètes -->
@@ -366,10 +437,16 @@
     <!-- Contact: WhatsApp direct + Email -->
     <div class="contact-bar">
         <a href="https://wa.me/243820586551" target="_blank" class="btn btn-whatsapp" id="whatsappLink">
-            💬 Nous écrire sur WhatsApp
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.33A10 10 0 1 0 12 2z"/>
+            </svg>
+            Nous écrire sur WhatsApp
         </a>
         <a href="mailto:u12software@gmail.com" class="btn btn-email" id="emailLink">
-            ✉️ u12software@gmail.com
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            u12software@gmail.com
         </a>
     </div>
 
@@ -389,29 +466,24 @@
     const androidBtn = document.getElementById('androidBtn');
     const windowsBtn = document.getElementById('windowsBtn');
     const posBtn = document.getElementById('posBtn');
-    const webBtn = document.getElementById('webBtn');
-    
+
     // Bouton Android - lien APK
     androidBtn.addEventListener('click', (e) => {
         e.preventDefault();
         window.location.href = 'https://github.com/U-Software-Company/medigest_mobile/releases/download/v1.0.0/MedigestPro.apk';
     });
-    
-    // Bouton Windows
+
+    // Bouton Windows - nouveau lien
     windowsBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'https://github.com/U-Software-Company/medigestpro/releases/download/v1.0.0/MediGestPro.exe';
+        window.location.href = 'https://github.com/U-Software-Company/medigest_mobile/releases/download/v1.0.0/MedigestPro.exe';
     });
-    
-    // NOUVEAU : Bouton POS - lien APK
+
+    // Bouton POS - lien APK
     posBtn.addEventListener('click', (e) => {
         e.preventDefault();
         window.location.href = 'https://github.com/U-Software-Company/medigest_mobile/releases/download/v1.0.0/app-release.apk';
     });
-    
-    // Le bouton web est déjà un lien normal
-    const whatsappLink = document.getElementById('whatsappLink');
-    // déjà un href valide https://wa.me/243820586551 → ouvre WhatsApp direct
 </script>
 
 </body>
